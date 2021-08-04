@@ -4,7 +4,7 @@ const Homepage = () => {
 	const { isAuthenticated } = useAuth();
 
 	return isAuthenticated ? (
-		<p>You are authorized</p>
+		<p>You already authorized</p>
 	) : (
 		<div
 			style={{
@@ -13,12 +13,7 @@ const Homepage = () => {
 				backgroundColor: "var(--dark-foreground-color)",
 				borderRadius: 4,
 			}}
-		>
-			<p>
-				Pwease authorize yourself by clicking that nice looking button on
-				<strong> top-right</strong> corner of the page before using this app.
-			</p>
-		</div>
+		></div>
 	);
 };
 
