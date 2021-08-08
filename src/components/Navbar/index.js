@@ -25,7 +25,7 @@ const Navbar = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!query) alert("Please input the query");
+		if (!query) alert("Pwease input the query");
 		getTracks(accessToken, {
 			q: query,
 			type: "track",
@@ -36,13 +36,7 @@ const Navbar = () => {
 	return (
 		<nav className={style.navbar}>
 			<div className={style.logo}>
-				<a href="/">
-					<img
-						src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
-						alt="logo"
-						width="100px"
-					/>
-				</a>
+				<a href="/">GenGIGIH</a>
 			</div>
 			<form className={style.search} onSubmit={handleSubmit}>
 				<input
@@ -76,7 +70,7 @@ const Navbar = () => {
 					</>
 				) : (
 					<Button onClick={authorize} icon={<FaSpotify />}>
-						Login
+						Login to Spotify
 					</Button>
 				)}
 			</div>
