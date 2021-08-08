@@ -6,7 +6,7 @@ const Dropdown = ({ isOpen }) => {
 	return !isOpen ? null : (
 		<div className={style.dropdown}>
 			<p>
-				Hello <strong>{user.display_name}</strong>
+				Hewwo <strong>{user.display_name}</strong>
 			</p>
 		</div>
 	);
