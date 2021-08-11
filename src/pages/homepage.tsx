@@ -6,14 +6,7 @@ const Homepage = () => {
 
 	return (
 		<Center bg="trueGray.800" borderRadius={4}>
-			{isAuthenticated ? (
-				<Text>You are authorized</Text>
-			) : (
-				<Text>
-					Pwease authorize yourself by clicking that nice looking button on
-					<strong> top-right</strong> corner of the page before using this app.
-				</Text>
-			)}
+			{isAuthenticated ? <Text>You are authorized</Text> : <Text></Text>}
 		</Center>
 	);
 };

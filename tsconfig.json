@@ -5,6 +5,7 @@
 		"jsx": "react-jsx",
 		"moduleResolution": "node",
 		"lib": ["dom", "dom.iterable", "esnext"],
+		"baseUrl": "./src/",
 		"skipLibCheck": true,
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
