@@ -6,7 +6,11 @@ const Homepage = () => {
 
 	return (
 		<Center bg="trueGray.800" borderRadius={4}>
-			{isAuthenticated ? <Text>You are authorized</Text> : <Text></Text>}
+			{isAuthenticated ? (
+				<Text>You Already Login</Text>
+			) : (
+				<Text>You Can Login By clicking The Login Button</Text>
+			)}
 		</Center>
 	);
 };

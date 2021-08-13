@@ -13,13 +13,13 @@ import {
 	Button,
 	useToast,
 } from "@chakra-ui/react";
-import { useAppDispatch, useAppSelector } from "store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import {
 	clearSelectedTracks,
 	setFormTitle,
 	setFormDescription,
-} from "store/playlist";
-import { postPlaylist, postPlaylistTracks } from "libs/spotify";
+} from "../../store/playlist";
+import { postPlaylist, postPlaylistTracks } from "../../libs/spotify";
 import * as React from "react";
 
 const CreatePlaylistModal = ({
@@ -41,8 +41,8 @@ const CreatePlaylistModal = ({
 			description: form.description,
 			public: false,
 		})
-			.then((playlist) => {
-				return postPlaylistTracks(accessToken, playlist.id, {
+			.then(({ data }) => {
+				return postPlaylistTracks(accessToken, data.id, {
 					uris: selectedTracks,
 				});
 			})
@@ -50,7 +50,7 @@ const CreatePlaylistModal = ({
 				dispatch(clearSelectedTracks());
 				onClose();
 				return toast({
-					title: "Playlist Created!",
+					title: "Woohoo!",
 					description: "Playlist has been created successfully!",
 					status: "success",
 					duration: 9000,
