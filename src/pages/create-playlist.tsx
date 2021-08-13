@@ -3,7 +3,7 @@ import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "../store";
 import { clearSelectedTracks } from "../store/playlist";
-import Track from "../components/track";
+import Track from "../components/Track";
 import CreatePlaylistModal from "../components/create-playlist-modal";
 
 const CreatePlaylist = () => {
