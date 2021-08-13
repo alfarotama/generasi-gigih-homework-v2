@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "libs/test-utils";
 import data from "data/sample";
-import track from "./index";
+import Track from "./index";
 
 const setup = () => {
 	const utils = render(<Track track={data[0]} />);
