@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { getProfile } from "./spotify";
 import { useHistory } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "store";
-import { login, storeUser } from "store/auth";
+import { useAppDispatch, useAppSelector } from "../store";
+import { login, storeUser } from "../store/auth";
 
 export const useAuth = () => {
 	const { isAuthenticated, accessToken, user } = useAppSelector(
@@ -20,8 +20,8 @@ export const useAuth = () => {
 			});
 		}
 		if (isAuthenticated && user === null) {
-			getProfile(accessToken).then((user) => {
-				dispatch(storeUser(user));
+			getProfile(accessToken).then(({ data }) => {
+				dispatch(storeUser(data));
 				history.push("/create-playlist");
 			});
 		}

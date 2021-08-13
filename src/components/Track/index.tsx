@@ -1,11 +1,14 @@
 import { Flex, Button, Image, Text, useColorModeValue } from "@chakra-ui/react";
-import { useAppDispatch, useAppSelector } from "store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import {
 	Artist,
 	Track as SpotifyTrack,
 	Image as SpotifyImage,
-} from "types/spotify";
-import { addSelectedTracks, substractSelectedTracks } from "store/playlist";
+} from "../../types/spotify";
+import {
+	addSelectedTracks,
+	substractSelectedTracks,
+} from "../../store/playlist";
 import * as React from "react";
 
 const Track = ({ track }: { track: SpotifyTrack }) => {
@@ -45,11 +48,12 @@ const Track = ({ track }: { track: SpotifyTrack }) => {
 	);
 
 	const bg = useColorModeValue("white", "gray.800");
+	const shadow = useColorModeValue("md", "none");
 
 	return (
-		<Flex align="center" my={2} p={2} borderRadius="lg" bg={bg}>
-			<Image mr={4} borderRadius={2} src={image?.url} alt={track.name} />
-			<Flex direction="column" flex={1}>
+		<Flex align="center" my={2} p={2} borderRadius="lg" _hover={{ bg, shadow }}>
+			<Image borderRadius={2} src={image?.url} alt={track.name} />
+			<Flex mx={4} direction="column" flex={1}>
 				<Text fontWeight="bold">{track.name}</Text>
 				<Text>{artists}</Text>
 			</Flex>

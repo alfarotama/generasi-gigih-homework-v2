@@ -24,6 +24,7 @@ export interface Owner {
 }
 
 export interface Tracks {
+	[x: string]: any;
 	href: string;
 	items: any[];
 	limit: number;
