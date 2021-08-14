@@ -8,7 +8,7 @@ const send = axios.create({
 export const spotifyAuthUrl = (): string => {
 	const options: string = new URLSearchParams({
 		client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID as string,
-		redirect_uri: process.env.REACT_APP_URL as string,
+		redirect_uri: process.env.REACT_APP_URL.toString(),
 		response_type: "token",
 		scope: "playlist-modify-private",
 	}).toString();
